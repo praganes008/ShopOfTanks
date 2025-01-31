@@ -12,13 +12,16 @@ namespace ShopOfTanks
 {
     public partial class ProductForm : Form
     {
-        public ProductForm(string name)
+        public ProductForm(Product product)
         {
             InitializeComponent();
             
-            Text = name;
-            ProductLabel.Text = name;
-            ProductPictureBox.Load("../../Pictures/" + name + ".jpeg");
+            Text = product.name;
+            ProductLabel.Text = product.name;
+            ProductPictureBox.Image = product.picture.Image;
+            CountryLabel.Text = "Страна производства: " + product.country;
+
+
         }
     }
 }
