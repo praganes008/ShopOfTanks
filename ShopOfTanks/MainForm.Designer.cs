@@ -116,11 +116,18 @@
             this.SearchButton.TabIndex = 4;
             this.SearchButton.Text = "найти";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // CategoryComboBox1
             // 
             this.CategoryComboBox1.FormattingEnabled = true;
-            this.CategoryComboBox1.Location = new System.Drawing.Point(548, 57);
+            this.CategoryComboBox1.Items.AddRange(new object[] {
+            "",
+            "тяжёлый танк",
+            "средний танк",
+            "лёгкий танк",
+            "ПТ-САУ"});
+            this.CategoryComboBox1.Location = new System.Drawing.Point(544, 57);
             this.CategoryComboBox1.Name = "CategoryComboBox1";
             this.CategoryComboBox1.Size = new System.Drawing.Size(220, 33);
             this.CategoryComboBox1.TabIndex = 3;
@@ -153,6 +160,7 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.AutoScroll = true;
             this.MainPanel.BackColor = System.Drawing.Color.Blue;
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 198);
@@ -172,6 +180,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
