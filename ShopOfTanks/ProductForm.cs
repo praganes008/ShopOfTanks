@@ -20,7 +20,9 @@ namespace ShopOfTanks
             ProductLabel.Text = product.name;
             ProductPictureBox.Image = product.picture.Image;
             CountryLabel.Text = "Страна производства: " + product.country;
-
+            MassaLabel.Text = "Масса танка: " + product.massa;
+            PriceLabel.Text = "Цена танка: " + product.price;
+            CategoryLabel.Text = "Тип танка: " + product.type;
 
         }
     }

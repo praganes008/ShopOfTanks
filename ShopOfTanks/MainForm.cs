@@ -78,7 +78,7 @@ namespace ShopOfTanks
         private void PicProduct_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            for(int i = 0; i<5; i++)
+            for(int i = 0; i<12; i++)
             {
                 if(pb.Tag.ToString() == products[i].name)
                 {
@@ -148,22 +148,54 @@ namespace ShopOfTanks
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)//сёрч баттон
         {
             int x = 30;
             int y = 25;
+
+            //фор для поиска всего.
             for (int i = 0; i < 12; i++)
             {
 
                 products[i].picture.Visible = true;
                 products[i].label.Visible = true;
 
-                if(CategoryComboBox1.Text != "" & CategoryComboBox1.Text != products[i].type)
+                //название танка
+                if (NameTextBox.Text != "" && !products[i].name.Contains(NameTextBox.Text))
                 {
                     products[i].picture.Visible = false;
                     products[i].label.Visible = false;
                 }
 
+                //категория танка(тт, ст...)
+                if (CategoryComboBox1.Text != "" && CategoryComboBox1.Text != products[i].type)
+                {
+                    products[i].picture.Visible = false;
+                    products[i].label.Visible = false;
+                }
+
+                //страна производства танка
+                if (CountryComboBox.Text != "" && CountryComboBox.Text != products[i].country)
+                {
+                    products[i].picture.Visible = false;
+                    products[i].label.Visible = false;
+                }
+
+                //цена танка(до)
+                if (MonyTextBox.Text != "" && Convert.ToInt32(MonyTextBox.Text) < products[i].price)
+                {
+                    products[i].picture.Visible = false;
+                    products[i].label.Visible = false;
+                }
+
+                //масса
+                if (mTextBox.Text != "" && Convert.ToInt32(mTextBox.Text) != products[i].massa)
+                {
+                    products[i].picture.Visible = false;
+                    products[i].label.Visible = false;
+                }
+
+                //что бы они перестроились при поиске
                 if (products[i].picture.Visible)
                 {
                     products[i].picture.Location = new Point(x, y);

@@ -40,6 +40,12 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.HideButton = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.CountryComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MonyTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.AusPanel.SuspendLayout();
             this.FiltrPanel.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +93,12 @@
             // FiltrPanel
             // 
             this.FiltrPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FiltrPanel.Controls.Add(this.label5);
+            this.FiltrPanel.Controls.Add(this.mTextBox);
+            this.FiltrPanel.Controls.Add(this.label4);
+            this.FiltrPanel.Controls.Add(this.MonyTextBox);
+            this.FiltrPanel.Controls.Add(this.label3);
+            this.FiltrPanel.Controls.Add(this.CountryComboBox);
             this.FiltrPanel.Controls.Add(this.label2);
             this.FiltrPanel.Controls.Add(this.SearchButton);
             this.FiltrPanel.Controls.Add(this.CategoryComboBox1);
@@ -168,6 +180,62 @@
             this.MainPanel.Size = new System.Drawing.Size(1123, 367);
             this.MainPanel.TabIndex = 2;
             // 
+            // CountryComboBox
+            // 
+            this.CountryComboBox.FormattingEnabled = true;
+            this.CountryComboBox.Items.AddRange(new object[] {
+            "",
+            "Франция",
+            "Италия",
+            "США",
+            "СССР",
+            "Великобритания"});
+            this.CountryComboBox.Location = new System.Drawing.Point(544, 97);
+            this.CountryComboBox.Name = "CountryComboBox";
+            this.CountryComboBox.Size = new System.Drawing.Size(220, 33);
+            this.CountryComboBox.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(418, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Страна";
+            // 
+            // MonyTextBox
+            // 
+            this.MonyTextBox.Location = new System.Drawing.Point(170, 100);
+            this.MonyTextBox.Name = "MonyTextBox";
+            this.MonyTextBox.Size = new System.Drawing.Size(220, 30);
+            this.MonyTextBox.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Цена(до)";
+            // 
+            // mTextBox
+            // 
+            this.mTextBox.Location = new System.Drawing.Point(891, 95);
+            this.mTextBox.Name = "mTextBox";
+            this.mTextBox.Size = new System.Drawing.Size(220, 30);
+            this.mTextBox.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(800, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Масса";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -206,6 +274,12 @@
         private System.Windows.Forms.ComboBox CategoryComboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CountryComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox MonyTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox mTextBox;
     }
 }
 

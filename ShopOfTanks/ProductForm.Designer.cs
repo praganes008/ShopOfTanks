@@ -31,6 +31,10 @@
             this.ProductLabel = new System.Windows.Forms.Label();
             this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.CountryLabel = new System.Windows.Forms.Label();
+            this.MassaLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +65,51 @@
             this.CountryLabel.TabIndex = 2;
             this.CountryLabel.Text = "label1";
             // 
+            // MassaLabel
+            // 
+            this.MassaLabel.AutoSize = true;
+            this.MassaLabel.Location = new System.Drawing.Point(42, 565);
+            this.MassaLabel.Name = "MassaLabel";
+            this.MassaLabel.Size = new System.Drawing.Size(64, 25);
+            this.MassaLabel.TabIndex = 3;
+            this.MassaLabel.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(173, 565);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "тонн(ы)";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(42, 601);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(64, 25);
+            this.PriceLabel.TabIndex = 5;
+            this.PriceLabel.Text = "label2";
+            // 
+            // CategoryLabel
+            // 
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Location = new System.Drawing.Point(42, 635);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(64, 25);
+            this.CategoryLabel.TabIndex = 6;
+            this.CategoryLabel.Text = "label2";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 703);
+            this.Controls.Add(this.CategoryLabel);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.MassaLabel);
             this.Controls.Add(this.CountryLabel);
             this.Controls.Add(this.ProductPictureBox);
             this.Controls.Add(this.ProductLabel);
@@ -85,5 +129,9 @@
         private System.Windows.Forms.Label ProductLabel;
         private System.Windows.Forms.PictureBox ProductPictureBox;
         private System.Windows.Forms.Label CountryLabel;
+        private System.Windows.Forms.Label MassaLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label CategoryLabel;
     }
 }
