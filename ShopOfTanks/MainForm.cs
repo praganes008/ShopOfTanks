@@ -47,11 +47,13 @@ namespace ShopOfTanks
 
     public partial class MainForm : Form
     {
-        Product[] products = new Product[12];
+        //Product[] products = new Product[12];
+
+        public static List<Product> products = new List<Product>();
 
         public MainForm()
         {
-
+            
 
 
             InitializeComponent();
@@ -59,26 +61,27 @@ namespace ShopOfTanks
             NameLabel.Visible = false;
             FiltrPanel.Height = HideButton.Height;
             HideButton.Text = "развернуть";
-
-            products[0] = new Product("Т-34(экр.)", "СССР", 32, "средний танк", 25150000);
-            products[1] = new Product("Т34(1776)", "США", 65, "тяжёлый танк", 32200000);
-            products[2] = new Product("AMX 50 120", "Франция", 19, "тяжёлый танк", 18430000);
-            products[3] = new Product("FV4005", "Великобритания", 19, "ПТ-САУ", 28250000);
-            products[4] = new Product("Grille15", "Германия", 22, "ПТ-САУ", 78450000);
-            products[5] = new Product("СТ-1", "СССР", 34, "тяжёлый танк", 56000000);
-            products[6] = new Product("Jg. Pz. E100", "Германия", 98, "ПТ-САУ", 1000000000);
-            products[7] = new Product("Progetto 65", "Италия", 23, "средний танк", 28450000);
-            products[8] = new Product("M-6-Y", "США", 54, "тяжёлый танк", 79000000);
-            products[9] = new Product("P.43 ter", "Италия", 42, "средний танк", 24550000);
-            products[10] = new Product("Foch (155)", "Франция", 52, "ПТ-САУ", 73500000);
-            products[11] = new Product("FV215b (183)", "Великобритания", 53, "ПТ-САУ", 89000000);
-
+            
+            products.Clear();
+            string[] strs = System.IO.File.ReadAllLines("../../Pictures/Products.txt");
+            
+            foreach(string str in strs)
+            {
+                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);                                                   //сринг, т.к у нас разделитель из 2х символов, тюе уже строка
+                Product product = new Product(parts[0],
+                                              parts[1], 
+                                              Convert.ToInt32(parts[2]), 
+                                              parts[3], 
+                                              Convert.ToInt32(parts[4]) );
+                products.Add(product);
+            }
+                
         }
 
         private void PicProduct_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            for(int i = 0; i<12; i++)
+            for(int i = 0; i< products.Count; i++)
             {
                 if(pb.Tag.ToString() == products[i].name)
                 {
@@ -92,7 +95,7 @@ namespace ShopOfTanks
         private void lblProduct_Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < products.Count; i++)
             {
                 if (lbl.Text == products[i].name)
                 {
@@ -127,7 +130,7 @@ namespace ShopOfTanks
         {
             int x = 30;
             int y = 25;
-            for(int i=0; i < 12; i++)   
+            for(int i=0; i < products.Count; i++)   
             {
                 products[i].picture.Location = new Point(x, y);
                 products[i].picture.Size = new Size(171, 166);
@@ -154,7 +157,7 @@ namespace ShopOfTanks
             int y = 25;
 
             //фор для поиска всего.
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < products.Count; i++)
             {
 
                 products[i].picture.Visible = true;
@@ -209,6 +212,11 @@ namespace ShopOfTanks
                     }
                 }
             }
+        }
+
+        private void MainPanel_Resize(object sender, EventArgs e)
+        {
+            SearchButton_Click(null, null);
         }
     }
 }
