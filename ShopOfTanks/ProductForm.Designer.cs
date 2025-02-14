@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
+            this.OpistextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +103,31 @@
             this.CategoryLabel.TabIndex = 6;
             this.CategoryLabel.Text = "label2";
             // 
+            // OpistextBox
+            // 
+            this.OpistextBox.Location = new System.Drawing.Point(475, 82);
+            this.OpistextBox.Multiline = true;
+            this.OpistextBox.Name = "OpistextBox";
+            this.OpistextBox.ReadOnly = true;
+            this.OpistextBox.Size = new System.Drawing.Size(358, 609);
+            this.OpistextBox.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(587, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Информация";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 703);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.OpistextBox);
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.label1);
@@ -133,5 +155,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label CategoryLabel;
+        private System.Windows.Forms.TextBox OpistextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxFamil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxPassvord = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxResPasvord = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,19 +50,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ваше имя";
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(307, 30);
-            this.textBox1.TabIndex = 1;
+            this.textBoxName.Location = new System.Drawing.Point(17, 68);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(307, 30);
+            this.textBoxName.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxFamil
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 173);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(307, 30);
-            this.textBox2.TabIndex = 2;
+            this.textBoxFamil.Location = new System.Drawing.Point(17, 173);
+            this.textBoxFamil.Name = "textBoxFamil";
+            this.textBoxFamil.Size = new System.Drawing.Size(307, 30);
+            this.textBoxFamil.TabIndex = 2;
             // 
             // label1
             // 
@@ -82,19 +82,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Логин";
             // 
-            // textBox3
+            // textBoxLogin
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 261);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(311, 30);
-            this.textBox3.TabIndex = 5;
+            this.textBoxLogin.Location = new System.Drawing.Point(13, 261);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(311, 30);
+            this.textBoxLogin.TabIndex = 5;
             // 
-            // textBox4
+            // textBoxPassvord
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 340);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(311, 30);
-            this.textBox4.TabIndex = 6;
+            this.textBoxPassvord.Location = new System.Drawing.Point(13, 340);
+            this.textBoxPassvord.Name = "textBoxPassvord";
+            this.textBoxPassvord.PasswordChar = '*';
+            this.textBoxPassvord.Size = new System.Drawing.Size(311, 30);
+            this.textBoxPassvord.TabIndex = 6;
             // 
             // label4
             // 
@@ -114,12 +115,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Повторите пароль";
             // 
-            // textBox5
+            // textBoxResPasvord
             // 
-            this.textBox5.Location = new System.Drawing.Point(13, 440);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(311, 30);
-            this.textBox5.TabIndex = 9;
+            this.textBoxResPasvord.Location = new System.Drawing.Point(13, 440);
+            this.textBoxResPasvord.Name = "textBoxResPasvord";
+            this.textBoxResPasvord.PasswordChar = '*';
+            this.textBoxResPasvord.Size = new System.Drawing.Size(311, 30);
+            this.textBoxResPasvord.TabIndex = 9;
             // 
             // button1
             // 
@@ -130,6 +132,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Зарегистрироваться";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegForm
             // 
@@ -137,15 +140,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 567);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxResPasvord);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxPassvord);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxFamil);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -159,15 +162,15 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxFamil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxPassvord;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxResPasvord;
         private System.Windows.Forms.Button button1;
     }
 }

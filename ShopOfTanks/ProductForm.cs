@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,11 @@ namespace ShopOfTanks
             PriceLabel.Text = "Цена танка: " + product.price;
             CategoryLabel.Text = "Тип танка: " + product.type;
 
+            try
+                {
+                OpistextBox.Text = System.IO.File.ReadAllText("../../Pictures/" + product.name + ".txt");
+                }
+            catch(Exception) { }
         }
     }
 }
